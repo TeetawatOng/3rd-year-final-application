@@ -7,4 +7,136 @@
     android:layout_height="match_parent"
     tools:context=".lesson">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="400dp"
+        android:background="#3E3047"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation_item" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="411dp"
+        android:layout_height="110dp"
+        android:background="#FFC707"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="109dp"
+        android:layout_height="29dp"
+        android:text="learning JS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lesson"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#EEEEEE"
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableTint="#000000"
+        android:text="Unit 1 : Data type"
+        android:textColor="#232323"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#EEEEEE"
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableTint="#000000"
+        android:text="Unit 2 : Variable"
+        android:textColor="#232323"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#EEEEEE"
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableTint="#000000"
+        android:text="Unit 3 : Operator"
+        android:textColor="#232323"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#EEEEEE"
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableTint="#000000"
+        android:text="Unit 4 : Loop"
+        android:textColor="#232323"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#EEEEEE"
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableTint="#000000"
+        android:text="Unit 5 : Function"
+        android:textColor="#232323"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

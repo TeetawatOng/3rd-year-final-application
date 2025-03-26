@@ -13,16 +13,40 @@
         android:theme="@style/Theme.Final_Application"
         tools:targetApi="31">
         <activity
+            android:name=".TestUnit_5"
+            android:exported="false" />
+        <activity
+            android:name=".TestUnit_4"
+            android:exported="false" />
+        <activity
+            android:name=".TestUnit_3"
+            android:exported="false" />
+        <activity
+            android:name=".unit5"
+            android:exported="false" />
+        <activity
+            android:name=".unit4"
+            android:exported="false" />
+        <activity
+            android:name=".unit3"
+            android:exported="false" />
+        <activity
+            android:name=".TestUnit_2"
+            android:exported="false" />
+        <activity
+            android:name=".unit2"
+            android:exported="false" />
+        <activity
             android:name=".TestUnit_1"
             android:exported="false" />
         <activity
             android:name=".unit1"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".lesson"

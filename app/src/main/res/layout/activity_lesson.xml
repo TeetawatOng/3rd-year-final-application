@@ -68,7 +68,7 @@
         android:layout_width="316dp"
         android:layout_height="59dp"
         android:backgroundTint="#EEEEEE"
-        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:drawableLeft="@android:drawable/alert_dark_frame"
         android:drawableTint="#000000"
         android:text="Unit 1 : Data type"
         android:textColor="#232323"

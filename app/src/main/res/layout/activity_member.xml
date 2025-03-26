@@ -55,24 +55,35 @@
         android:id="@+id/imageView4"
         android:layout_width="157dp"
         android:layout_height="353dp"
-        app:srcCompat="@drawable/บอส"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="110dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291"
+        app:srcCompat="@drawable/บอส" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="299dp"
         android:layout_height="210dp"
-        app:srcCompat="@drawable/จิ"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="411dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.802"
+        app:srcCompat="@drawable/จิ" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="202dp"
         android:layout_height="347dp"
-        app:srcCompat="@drawable/_80684720_1705925046679821_7586290142426207990_n"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="116dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302"
+        app:srcCompat="@drawable/_80684720_1705925046679821_7586290142426207990_n" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

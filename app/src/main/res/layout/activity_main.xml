@@ -49,12 +49,13 @@
         android:layout_width="268dp"
         android:layout_height="58dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:background="#D9D9D9">
+        android:layout_marginTop="30dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D9D9D9"
+            android:drawableLeft="@mipmap/logo_user_foreground"
             android:hint="Username" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,12 +63,13 @@
         android:layout_width="268dp"
         android:layout_height="58dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:background="#D9D9D9">
+        android:layout_marginTop="30dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D9D9D9"
+            android:drawableLeft="@mipmap/logo_pass_foreground"
             android:hint="Password" />
 
     </com.google.android.material.textfield.TextInputLayout>

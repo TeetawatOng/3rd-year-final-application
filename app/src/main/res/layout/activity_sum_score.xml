@@ -9,8 +9,9 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="279dp"
-        android:layout_height="379dp"
+        android:layout_width="305dp"
+        android:layout_height="295dp"
+        android:background="@drawable/radius_and_backgroundtransparent"
         android:gravity="center"
         android:text="เกือบได้เต็มแล้วนะ ลองแก้มือดูอีกครั้งไหม"
         android:textSize="20sp"
@@ -91,7 +92,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77"

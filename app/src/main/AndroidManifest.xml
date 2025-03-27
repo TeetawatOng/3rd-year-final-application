@@ -13,12 +13,6 @@
         android:theme="@style/Theme.Final_Application"
         tools:targetApi="31">
         <activity
-            android:name=".score"
-            android:exported="false" />
-        <activity
-            android:name=".achievement"
-            android:exported="false" />
-        <activity
             android:name=".TestUnit_5"
             android:exported="false" />
         <activity

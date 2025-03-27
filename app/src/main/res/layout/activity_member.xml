@@ -52,39 +52,37 @@
         app:menu="@menu/bottom_navigation_item" />
 
     <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/smart"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="198dp" />
+
+    <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="157dp"
-        android:layout_height="353dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"
-        app:srcCompat="@drawable/nuttawat" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/boss"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="198dp" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="299dp"
-        android:layout_height="210dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/jiramet" />
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="นายธีร์ธวัช องค์ปรีชา"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="356dp" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="202dp"
-        android:layout_height="347dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302"
-        app:srcCompat="@drawable/_80684720_1705925046679821_7586290142426207990_n" />
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6506021610053"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="384dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

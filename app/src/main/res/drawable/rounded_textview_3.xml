@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <!-- มุมโค้ง -->
+    <corners android:radius="16dp" />
+
+    <!-- สีพื้นหลัง -->
+    <solid android:color="#C1FFC1" />
+
+
+
+</shape>

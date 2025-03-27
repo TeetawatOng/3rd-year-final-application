@@ -56,16 +56,16 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:srcCompat="@drawable/smart"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="198dp" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="122dp" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:srcCompat="@drawable/boss"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="198dp" />
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="122dp" />
 
     <TextView
         android:id="@+id/textView13"
@@ -74,7 +74,16 @@
         android:text="นายธีร์ธวัช องค์ปรีชา"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteY="272dp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="นายณัฐวัสส์ อมรตานนท์"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="272dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -82,7 +91,16 @@
         android:layout_height="wrap_content"
         android:text="6506021610053"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="384dp" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6506021610011"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="300dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

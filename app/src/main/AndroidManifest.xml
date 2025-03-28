@@ -30,21 +30,6 @@
             android:name=".activity_sum_score_unit1"
             android:exported="false" />
         <activity
-            android:name=".score4"
-            android:exported="false" />
-        <activity
-            android:name=".score3"
-            android:exported="false" />
-        <activity
-            android:name=".score2"
-            android:exported="false" />
-        <activity
-            android:name=".test"
-            android:exported="false" />
-        <activity
-            android:name=".score1"
-            android:exported="false" />
-        <activity
             android:name=".Score"
             android:exported="false" />
         <activity

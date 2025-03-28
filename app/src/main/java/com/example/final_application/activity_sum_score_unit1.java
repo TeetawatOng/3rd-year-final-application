@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class activity_sum_score_unit1 extends AppCompatActivity implements View.OnClickListener {
     Button btnRetest1;
     TextView scoreView1, textExcellent, textGood, textBad;
+    ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
 
     @Override
@@ -30,9 +32,12 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
 
         btnRetest1 = findViewById(R.id.btnRetest1);
         scoreView1 = findViewById(R.id.scoreView1);
-        textBad = findViewById(R.id.textBad);
-        textGood = findViewById(R.id.textGood);
-        textExcellent = findViewById(R.id.textExcellent);
+        textBad = findViewById(R.id.textBad1);
+        textGood = findViewById(R.id.textGood1);
+        textExcellent = findViewById(R.id.textExcellent1);
+        imageExcellent = findViewById(R.id.imageExcellent1);
+        imageGood = findViewById(R.id.imageGood1);
+        imageBad = findViewById(R.id.imageBad1);
         btnRetest1.setOnClickListener(this);
 
         showScore();
@@ -46,10 +51,13 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         scoreView1.setText(resultText);
         if (finalScore > 9) {
             textExcellent.setVisibility(View.VISIBLE);
+            imageExcellent.setVisibility(View.VISIBLE);
         } else if (finalScore >= 5) {
             textGood.setVisibility(View.VISIBLE);
+            imageGood.setVisibility(View.VISIBLE);
         } else {
             textBad.setVisibility(View.VISIBLE);
+            imageBad.setVisibility(View.VISIBLE);
         }
     }
 

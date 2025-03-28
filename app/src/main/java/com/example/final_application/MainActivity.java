@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textRegister;
     TextInputEditText userInput, passwordInput;
     SharedPreferences sharedPreferences; // login tokens
+    MyDatabaseHelper myDatabaseHelper;
 
     private static final String SHARED_PREF_NAME = "userinfo";
     private static final String KEY_USERNAME = "username";
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textRegister.setOnClickListener(this);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+        myDatabaseHelper = new MyDatabaseHelper(this);
     }
 
     @Override
@@ -56,22 +58,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String password = passwordInput.getText().toString().trim();
 
             if (checkUsername(username) && checkPassword(password)){
-                if (username.equals("admin") && password.equals("1234")) {
+                if (myDatabaseHelper.checkLogin(username,password)) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(KEY_USERNAME, username);
                     editor.apply();
-
-                    Toast.makeText(this, "ล็อกอินสำเร็จ!", Toast.LENGTH_SHORT).show();
-                    Intent goLesson = new Intent(MainActivity.this, lesson.class);
-                    startActivity(goLesson);
+                    goLesson();
                 } else {
-                    Toast.makeText(this, "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง !", Toast.LENGTH_SHORT).show();
                 }
             }
         } else if (view.getId() == R.id.textRegister) {
             Intent goRegister = new Intent(MainActivity.this, Register.class);
             startActivity(goRegister);
         }
+    }
+
+    private void goLesson() {
+        Intent goLesson = new Intent(MainActivity.this, lesson.class);
+        startActivity(goLesson);
     }
 
     private boolean checkUsername(String username) {

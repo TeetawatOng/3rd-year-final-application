@@ -92,7 +92,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
         // check if this username already have
         if (cursor != null && cursor.getCount() > 0) {
             cursor.close();
-            return true; // if already have
+            return true; // if already have (can login)
         } else {
             cursor.close();
             return false; // if not
@@ -107,7 +107,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
 
         boolean exists = false;
         if (cursor != null && cursor.getCount() > 0) {
-            exists = true; // if cursor has count set to true
+            exists = true; // if cursor has count (mean duplicate) set to true
         }
         cursor.close();
         return exists;

@@ -50,7 +50,7 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
         String username = sharedPreferences.getString(KEY_USERNAME,null);
 
         if(username != null){
-            textUser.setText("สวัสดีผู้ใช้งาน " + username);
+            textUser.setText("สวัสดี " + username);
         }
     }
 

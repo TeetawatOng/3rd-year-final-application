@@ -36,6 +36,7 @@
         android:layout_marginTop="50px"
         android:layout_marginRight="30px">
 
+
     </WebView>
 
     <Button
@@ -60,4 +61,5 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="#FFFFFF"
         app:menu="@menu/bottom_navigation_item" />
+
 </LinearLayout>

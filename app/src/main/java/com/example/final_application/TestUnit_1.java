@@ -1,5 +1,6 @@
 package com.example.final_application;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -141,15 +142,17 @@ public class TestUnit_1 extends AppCompatActivity implements View.OnClickListene
             loadQuestion();
             setButtonVisibility();
         } else if (view.getId() == R.id.btnSubmit1) {
-            String strScore;
             if (selectedAnswerIndex == -1){
                 Toast.makeText(this,"กรุณาเลือกคำตอบ", Toast.LENGTH_SHORT).show();
                 return;
             }
             previousAnswers[currentQuestionIndex] = selectedAnswerIndex;
             finalScore = checkAnswer();
-            strScore = "คุณได้คะแนน: " + finalScore + "/" + totalQuestion;
-            Toast.makeText(this,strScore,Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TestUnit_1.this, activity_sum_score_unit1.class);
+            intent.putExtra("score",finalScore);
+            intent.putExtra("total",totalQuestion);
+            startActivity(intent);
+            finish();
         }
     }
 }

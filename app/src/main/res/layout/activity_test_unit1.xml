@@ -8,11 +8,29 @@
     android:background="#F5F5F5"
     tools:context=".lesson">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="25dp"
+            android:text="ข้อที่ : 1"
+            android:textAlignment="center"
+            android:textColor="#232323"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="400dp"
+        android:layout_width="411dp"
+        android:layout_height="120dp"
         android:background="#3E3047"
         app:itemIconTint="@color/white"
         app:itemTextColor="#FFFFFF"
@@ -20,15 +38,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_item" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="411dp"
         android:layout_height="113dp"
-        android:background="#FFC707"
+        android:background="@drawable/rounded_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -37,13 +52,12 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ข้อที่ : 1"
+        android:text="แบบทดสอบหลังเรียน"
         android:textAlignment="center"
         android:textColor="#232323"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +67,7 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNext1"
         android:layout_width="168dp"
         android:layout_height="54dp"
         android:layout_marginBottom="148dp"
@@ -73,7 +87,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnSubmit1"
         android:layout_width="168dp"
         android:layout_height="54dp"
         android:layout_marginBottom="148dp"
@@ -84,7 +98,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
@@ -93,18 +107,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="221dp"
-        android:layout_height="40dp"
-        android:text="TextView"
+        android:id="@+id/questionView1"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:text="คำถาม"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <RadioGroup
+        android:id="@+id/radioGroup1"
         android:layout_width="149dp"
         android:layout_height="197dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,32 +131,32 @@
         app:layout_constraintVertical_bias="0.374">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/unit1c1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="คำตอบที่ 1" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/unit1c2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="คำตอบที่ 2" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/unit1c3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="คำตอบที่ 3" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/unit1c4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="คำตอบที่ 4" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnBack1"
         android:layout_width="168dp"
         android:layout_height="54dp"
         android:backgroundTint="#232323"

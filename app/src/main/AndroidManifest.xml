@@ -15,6 +15,21 @@
         android:theme="@style/Theme.Final_Application"
         tools:targetApi="31">
         <activity
+            android:name=".activity_sum_score_unit5"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sum_score_unit4"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sum_score_unit3"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sum_score_unit2"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sum_score_unit1"
+            android:exported="false" />
+        <activity
             android:name=".score4"
             android:exported="false" />
         <activity

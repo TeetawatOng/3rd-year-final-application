@@ -1,9 +1,17 @@
 *{
-padding : 0;
-margin : 0;
-box-sizing : border-box;
+    padding : 0;
+    margin : 0;
+    box-sizing : border-box;
+    display: flex;
+    flex-direction: column;
+    user-select : none;
 }
 
-p{
-color : #ff0000;
+code{
+    width: 100%;
+    background-color : #3E3F5B;
+    color: #FFF;
+    padding-top : 10px;
+    padding-left : 20px;
+    padding-bottom : 10px;
 }

@@ -8,7 +8,7 @@
     tools:context=".activity_sum_score_unit1">
 
     <TextView
-        android:id="@+id/textGood"
+        android:id="@+id/textGood1"
         android:layout_width="305dp"
         android:layout_height="295dp"
         android:background="@drawable/radius_and_backgroundtransparent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textExcellent"
+        android:id="@+id/textExcellent1"
         android:layout_width="305dp"
         android:layout_height="295dp"
         android:background="@drawable/radius_and_backgroundtransparent"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textBad"
+        android:id="@+id/textBad1"
         android:layout_width="305dp"
         android:layout_height="295dp"
         android:background="@drawable/radius_and_backgroundtransparent"
@@ -114,10 +114,27 @@
         app:layout_constraintVertical_bias="0.838" />
 
     <ImageButton
+        android:id="@+id/imageGood1"
         android:layout_width="156dp"
         android:layout_height="286dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/good_score" />
+
+    <ImageButton
+        android:id="@+id/imageExcellent1"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
@@ -125,6 +142,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77"
         app:srcCompat="@drawable/pngwing_com" />
+
+    <ImageButton
+        android:id="@+id/imageBad1"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/bad_score" />
 
     <TextView
         android:id="@+id/scoreView1"

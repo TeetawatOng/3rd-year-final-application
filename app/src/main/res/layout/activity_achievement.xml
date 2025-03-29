@@ -7,13 +7,14 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:background="@drawable/rounded_layout"
-        android:orientation="vertical"/>
+        android:orientation="vertical" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ความสำเร็จ"
@@ -45,7 +46,7 @@
         app:menu="@menu/bottom_navigation_item" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/textAch3"
         android:layout_width="324dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_textview_3"
@@ -61,7 +62,7 @@
         app:layout_constraintVertical_bias="0.441" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textAch5"
         android:layout_width="324dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_textview_5"
@@ -77,7 +78,7 @@
         app:layout_constraintVertical_bias="0.672" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/textAch4"
         android:layout_width="324dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_textview_4"
@@ -93,7 +94,7 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textAch2"
         android:layout_width="324dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_textview_2"
@@ -109,7 +110,7 @@
         app:layout_constraintVertical_bias="0.327" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textAch1"
         android:layout_width="324dp"
         android:layout_height="59dp"
         android:background="@drawable/rounded_textview"
@@ -123,5 +124,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.214" />
+
+    <ProgressBar
+        android:id="@+id/progressAch3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="336dp"
+        android:max="10"
+        android:progress="5"
+        android:progressTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressAch5"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="492dp"
+        android:max="10"
+        android:progress="3"
+        android:progressTint="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
+
+    <ProgressBar
+        android:id="@+id/progressAch4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="412dp"
+        android:max="10"
+        android:progress="7"
+        android:progressTint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressAch2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="260dp"
+        android:max="10"
+        android:progress="9"
+        android:progressTint="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressAch1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="184dp"
+        android:max="10"
+        android:progress="2"
+        android:progressTint="#FFC107"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

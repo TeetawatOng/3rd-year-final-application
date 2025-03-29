@@ -3,6 +3,7 @@ package com.example.final_application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -10,10 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class activity_sum_score_unit1 extends AppCompatActivity implements View.OnClickListener {
     Button btnRetest1;
@@ -22,6 +26,7 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
     String resultText = "";
     MyDatabaseHelper myDatabaseHelper;
     SharedPreferences sharedPreferences;
+    BottomNavigationView bottomNavigationView;
 
     private static final String SHARED_PREF_NAME = "userinfo";
     private static final String KEY_USERNAME = "username";
@@ -51,11 +56,34 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
         showScore();
+
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        if (item.getItemId() == R.id.action_lesson){
+                            Intent goLesson = new Intent(activity_sum_score_unit1.this, lesson.class);
+                            startActivity(goLesson);
+                        }
+                        else if (item.getItemId() == R.id.action_achievement){
+                            Intent goAchievement = new Intent(activity_sum_score_unit1.this, Achievement.class);
+                            startActivity(goAchievement);
+                        }
+                        else if (item.getItemId() == R.id.action_member){
+                            Intent goMember = new Intent(activity_sum_score_unit1.this, member.class);
+                            startActivity(goMember);
+                        }
+                        return true;
+                    }
+                }
+        );
     }
 
     private void showScore() {
         int finalScore = getIntent().getIntExtra("score",0);
         int totalQuestion = getIntent().getIntExtra("total",0);
+        String username = sharedPreferences.getString(KEY_USERNAME,null);
 
         resultText = finalScore + "/" + totalQuestion;
         scoreView1.setText(resultText);
@@ -70,13 +98,8 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             imageBad.setVisibility(View.VISIBLE);
         }
 
-        if (KEY_USERNAME != null) {
-            boolean results = myDatabaseHelper.insertTestScore(KEY_USERNAME, "unit1", finalScore);
-            if (results) {
-                Toast.makeText(this, "ได้คะแนน " + finalScore, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "ไม่บันทึกคะแนนเพราะได้น้อยกว่าเดิม", Toast.LENGTH_SHORT).show();
-            }
+        if (username != null) {
+            boolean results = myDatabaseHelper.insertTestScore(username, "unit1", finalScore);
         }
     }
 
@@ -87,4 +110,6 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             startActivity(goTest1);
         }
     }
+
+
 }

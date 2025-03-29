@@ -24,7 +24,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
     public static final String COLUMN_TEST_ID = "id";
     public static final String COLUMN_UNIT = "unit";
     public static final String COLUMN_SCORE = "score";
-    public static final String COLUMN_USER_FK = "username"; // Foreign key to username from user_table
+    public static final String COLUMN_USER_FK = "userid"; // Foreign key to username from user_table
 
     private static final String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER
             + " (" +
@@ -38,13 +38,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
             COLUMN_TEST_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_UNIT + " TEXT, " +
             COLUMN_SCORE + " INTEGER, " +
-            COLUMN_USER_FK + " TEXT, " + // Username as Foreign Key
+            COLUMN_USER_FK + " INTEGER, " + // userid as Foreign Key
             "FOREIGN KEY(" + COLUMN_USER_FK + ") REFERENCES " + TABLE_USER + "(" + COLUMN_USERNAME + ") );";
 
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -73,40 +72,48 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
 
     // Insert test unit table
     public boolean insertTestScore(String username, String unit, int score) {
+        // Get userId from username
+        int userId = getUserIdByUsername(username);
+        if (userId == -1) {
+            return false;
+        }
         SQLiteDatabase db = this.getWritableDatabase();
-
         // Query to check old score
         String query = "SELECT " + COLUMN_SCORE + " FROM " + TABLE_TEST_SCORES +
                 " WHERE " + COLUMN_USER_FK + " = ? AND " + COLUMN_UNIT + " = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{username, unit});
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId), unit});
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             int existScore = cursor.getInt(0);
             cursor.close();
 
-            if (score <= existScore){
+            // Check best attempt
+            if (score <= existScore) {
                 db.close();
                 return false;
             }
 
             ContentValues values = new ContentValues();
-            values.put(COLUMN_SCORE,score);
+            values.put(COLUMN_SCORE, score);
             int rowsUpdated = db.update(TABLE_TEST_SCORES, values,
                     COLUMN_USER_FK + " = ? AND " + COLUMN_UNIT + " = ?",
-                    new String[]{username, unit});
+                    new String[]{String.valueOf(userId), unit});
             db.close();
-            return rowsUpdated > 0;
+            return rowsUpdated > 0; // ถ้า rows อัปเดตมากกว่า 0 ให้ return true
         }
 
+        // ถ้าไม่มี record เก่าก็ insert ใหม่
         cursor.close();
         ContentValues values = new ContentValues();
         values.put(COLUMN_UNIT, unit);
         values.put(COLUMN_SCORE, score);
-        values.put(COLUMN_USER_FK, username); // use username for reference
+        values.put(COLUMN_USER_FK, userId); // ใช้ userId สำหรับ reference
         long result = db.insert(TABLE_TEST_SCORES, null, values);
         db.close();
         return result != -1;
     }
+
+
 
     // check Login
     public boolean checkLogin(String username, String password) {
@@ -124,6 +131,24 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
         }
     }
 
+    public int getUnitScore(String username, String unit) {
+        int userId = getUserIdByUsername(username);
+        if (userId == -1) return 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT MAX(" + COLUMN_SCORE + ") FROM " + TABLE_TEST_SCORES +
+                        " WHERE " + COLUMN_USER_FK + " = ? AND " + COLUMN_UNIT + " = ?",
+                new String[]{String.valueOf(userId), unit});
+        int score = 0;
+        if (cursor.moveToFirst() && !cursor.isNull(0)) {
+            score = cursor.getInt(0);
+        }
+        cursor.close();
+        return score;
+    }
+
+
+
     // check dup email & dup username
     public boolean checkUserExists(String username, String email) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -136,6 +161,19 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
         }
         cursor.close();
         return exists;
+    }
+
+    public int getUserIdByUsername(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT " + COLUMN_USER_ID + " FROM " + TABLE_USER + " WHERE " + COLUMN_USERNAME + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{username});
+
+        int userId = -1; // -1 = not found username
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(0);
+        }
+        cursor.close();
+        return userId;
     }
 
 }

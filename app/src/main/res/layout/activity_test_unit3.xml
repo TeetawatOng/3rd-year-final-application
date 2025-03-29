@@ -12,22 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:background="@drawable/rounded_layout"
-        android:orientation="vertical">
+        android:orientation="vertical"/>
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingTop="25dp"
-            android:text="ข้อที่ : 1"
-            android:textAlignment="center"
-            android:textColor="#232323"
-            android:textSize="48sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="แบบทดสอบหลังเรียน"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
     <RadioGroup
+        android:id="@+id/radioGroup3"
         android:layout_width="149dp"
         android:layout_height="197dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +84,7 @@
 
 
     <Button
-        android:id="@+id/btnSubmit4"
+        android:id="@+id/btnNext3"
         android:layout_width="168dp"
         android:layout_height="54dp"
         android:layout_marginBottom="148dp"
@@ -100,7 +104,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnSubmit3"
         android:layout_width="168dp"
         android:layout_height="54dp"
         android:layout_marginBottom="148dp"
@@ -120,32 +124,33 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/questionView4"
-        android:layout_width="221dp"
-        android:layout_height="40dp"
+        android:id="@+id/questionView3"
+        android:layout_width="354dp"
+        android:layout_height="56dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.191" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnBack3"
         android:layout_width="168dp"
         android:layout_height="54dp"
+        android:layout_marginBottom="148dp"
         android:backgroundTint="#232323"
         android:drawableLeft="@android:drawable/ic_media_previous"
         android:text="ย้อนกลับ"
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

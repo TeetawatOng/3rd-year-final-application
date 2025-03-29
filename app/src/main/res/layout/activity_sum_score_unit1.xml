@@ -161,9 +161,10 @@
 
     <TextView
         android:id="@+id/scoreView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="168dp"
+        android:layout_height="64dp"
         android:text="9/10"
+        android:textAlignment="center"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"

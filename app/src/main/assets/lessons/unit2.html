@@ -6,9 +6,65 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Unit 2</title>
 </head>
 <body>
     <h1>Unit 2 : ตัวแปร</h1>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ตัวแปร (Variable) ใน JavaScript คือ พื้นที่เก็บข้อมูล ที่ใช้เก็บค่าต่าง ๆ เช่น ตัวเลข (Number), ข้อความ
+        (String), ค่า Boolean (true/false), อาร์เรย์ (Array) หรือออบเจ็กต์ (Object) เพื่อใช้ในการประมวลผลของโปรแกรม
+        เมื่อเราประกาศตัวแปร เราสามารถกำหนดค่าให้มัน และสามารถนำค่าที่เก็บไว้นั้นไปใช้ในโค้ดได้
+        <br></p>
+    <h3>1. var <br></h3>
+    <p> คุณสมบัติของ let <br>
+        1. มี Function Scope (ใช้ได้ทั้งฟังก์ชันที่มันอยู่ แต่ไม่จำกัดอยู่แค่บล็อก {}) <br>
+        2. สามารถประกาศซ้ำ (re-declare) ได้ <br>
+        3. มี Hoisting (ตัวแปรจะถูกยกขึ้นไปก่อนรันโค้ด แต่ค่าเริ่มต้นเป็น undefined) <br></p>
+    <div>
+        <code>
+            var x = 10; <br>
+            console.log(x); // 10
+        </code>
+    </div>
+
+    <h3>2. let  <br></h3>
+    <p> คุณสมบัติของ let <br>
+        1. มีBlock Scope (ใช้ได้แค่ใน {} ที่ประกาศไว้) <br>
+        2. ไม่สามารถประกาศซ้ำ (re-declare) ได้ใน block เดียวกัน <br>
+        3. มี Hoisting แต่ไม่สามารถใช้ตัวแปรก่อนประกาศได้ <br></p>
+    <div>
+        <code>
+            let y = 20; <br>
+            console.log(y); // 20
+        </code>
+    </div>
+
+    <h3>3. const  <br></h3>
+    <p> คุณสมบัติของ const <br>
+        1. มี Block Scope เหมือน let <br>
+        2. ต้องกำหนดค่าตั้งแต่เริ่มต้น และค่าห้ามเปลี่ยน (immutable) <br>
+        3. ใช้กับค่าคงที่ เช่น ค่าทางคณิตศาสตร์ (const PI = 3.1416;) <br></p>
+    <div>
+        <code>
+            const z = 50; <br>
+            console.log(z); // 50
+        </code>
+    </div>
+
+    <h3>4. array  <br></h3>
+    <p> คุณสมบัติของ const <br>
+        1. อาร์เรย์สามารถเก็บค่าหลายค่าในตัวแปรเดียว <br>
+        2. อาร์เรย์ใช้ดัชนี (Index) ในการเข้าถึงค่า <br>
+        3. อาร์เรย์สามารถมีข้อมูลประเภทต่างกันได้ <br></p>
+    <div>
+        <code>
+            let numbers = [10, 20, 30, 40, 50]; <br>
+            console.log(numbers); // Output: [10, 20, 30, 40, 50] <br>
+            ----------------------------  <br>
+            let colors = ["Red", "Green", "Blue"]; <br>
+            console.log(colors[0]); // Output: "Red"
+        </code>
+
+    </div>
+
+
 </body>
 </html>

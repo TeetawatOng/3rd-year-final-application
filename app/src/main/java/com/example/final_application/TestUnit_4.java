@@ -42,14 +42,14 @@ public class TestUnit_4 extends AppCompatActivity implements View.OnClickListene
             previousAnswers[i] = -1;
         }
 
-        questionView4 = findViewById(R.id.questionView4);
+        questionView4 = findViewById(R.id.questionView3);
         radioGroup4 = findViewById(R.id.radioGroup4);
         unit4c1 = findViewById(R.id.unit4c1);
         unit4c2 = findViewById(R.id.unit4c2);
         unit4c3 = findViewById(R.id.unit4c3);
         unit4c4 = findViewById(R.id.unit4c4);
         btnNext4 = findViewById(R.id.btnNext4);
-        btnSubmit4 = findViewById(R.id.btnSubmit4);
+        btnSubmit4 = findViewById(R.id.btnNext3);
         btnBack4 = findViewById(R.id.btnBack4);
         btnNext4.setOnClickListener(this);
         btnSubmit4.setOnClickListener(this);
@@ -141,7 +141,7 @@ public class TestUnit_4 extends AppCompatActivity implements View.OnClickListene
             currentQuestionIndex--;
             loadQuestion();
             setButtonVisibility();
-        } else if (view.getId() == R.id.btnSubmit4) {
+        } else if (view.getId() == R.id.btnNext3) {
             if (selectedAnswerIndex == -1){
                 Toast.makeText(this,"กรุณาเลือกคำตอบ", Toast.LENGTH_SHORT).show();
                 return;

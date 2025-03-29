@@ -3,19 +3,24 @@ package com.example.final_application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class lesson extends AppCompatActivity implements View.OnClickListener {
     Button btnUnit1, btnUnit2, btnUnit3, btnUnit4, btnUnit5;
     TextView textUser, textLogout;
+    BottomNavigationView bottomNavigationView;
 
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "userinfo";
@@ -39,6 +44,27 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
         btnUnit5 = findViewById(R.id.btnUnit5);
         textUser = findViewById(R.id.textUser);
         textLogout = findViewById(R.id.textLogout);
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        if (item.getItemId() == R.id.action_lesson){
+                            Intent goLesson = new Intent(lesson.this, lesson.class);
+                            startActivity(goLesson);
+                        }
+                        else if (item.getItemId() == R.id.action_achievement){
+                            Intent goAchievement = new Intent(lesson.this, Achievement.class);
+                            startActivity(goAchievement);
+                        }
+                        else if (item.getItemId() == R.id.action_member){
+                            Intent goMember = new Intent(lesson.this, member.class);
+                            startActivity(goMember);
+                        }
+                        return true;
+                    }
+                }
+        );
         btnUnit1.setOnClickListener(this);
         btnUnit2.setOnClickListener(this);
         btnUnit3.setOnClickListener(this);
@@ -81,4 +107,6 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
             finish();
         }
     }
+
+
 }

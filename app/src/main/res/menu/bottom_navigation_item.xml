@@ -2,8 +2,13 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:icon="@drawable/home" />
-    <item android:icon="@drawable/user" />
-    <item android:icon="@drawable/task" />
-    <item android:icon="@drawable/trophy" />
+    <item
+        android:id="@+id/action_lesson"
+        android:icon="@drawable/home" />
+    <item
+        android:id="@+id/action_achievement"
+        android:icon="@drawable/trophy" />
+    <item
+        android:id="@+id/action_member"
+        android:icon="@drawable/user" />
 </menu>

@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(KEY_USERNAME, username);
                     editor.apply();
-                    goLesson();
+                    Intent goLesson = new Intent(MainActivity.this, lesson.class);
+                    startActivity(goLesson);
                 } else {
                     Toast.makeText(this, "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง !", Toast.LENGTH_SHORT).show();
                 }
@@ -71,11 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent goRegister = new Intent(MainActivity.this, Register.class);
             startActivity(goRegister);
         }
-    }
-
-    private void goLesson() {
-        Intent goLesson = new Intent(MainActivity.this, lesson.class);
-        startActivity(goLesson);
     }
 
     private boolean checkUsername(String username) {

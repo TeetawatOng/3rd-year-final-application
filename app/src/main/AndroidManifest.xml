@@ -45,6 +45,9 @@
             android:name=".TestUnit_3"
             android:exported="false" />
         <activity
+            android:name=".member"
+            android:exported="false" />
+        <activity
             android:name=".unit5"
             android:exported="false" />
         <activity

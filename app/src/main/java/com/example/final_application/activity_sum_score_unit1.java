@@ -1,11 +1,13 @@
 package com.example.final_application;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,11 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
     TextView scoreView1, textExcellent, textGood, textBad;
     ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
+    MyDatabaseHelper myDatabaseHelper;
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "userinfo";
+    private static final String KEY_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,9 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         imageBad = findViewById(R.id.imageBad1);
         btnRetest1.setOnClickListener(this);
 
+        myDatabaseHelper = new MyDatabaseHelper(this);
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
         showScore();
     }
 
@@ -58,6 +68,15 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         } else {
             textBad.setVisibility(View.VISIBLE);
             imageBad.setVisibility(View.VISIBLE);
+        }
+
+        if (KEY_USERNAME != null) {
+            boolean results = myDatabaseHelper.insertTestScore(KEY_USERNAME, "unit1", finalScore);
+            if (results) {
+                Toast.makeText(this, "ได้คะแนน " + finalScore, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "ไม่บันทึกคะแนนเพราะได้น้อยกว่าเดิม", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

@@ -74,10 +74,35 @@ public class MyDatabaseHelper extends SQLiteOpenHelper  {
     // Insert test unit table
     public boolean insertTestScore(String username, String unit, int score) {
         SQLiteDatabase db = this.getWritableDatabase();
+
+        // Query to check old score
+        String query = "SELECT " + COLUMN_SCORE + " FROM " + TABLE_TEST_SCORES +
+                " WHERE " + COLUMN_USER_FK + " = ? AND " + COLUMN_UNIT + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{username, unit});
+
+        if (cursor.moveToFirst()){
+            int existScore = cursor.getInt(0);
+            cursor.close();
+
+            if (score <= existScore){
+                db.close();
+                return false;
+            }
+
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_SCORE,score);
+            int rowsUpdated = db.update(TABLE_TEST_SCORES, values,
+                    COLUMN_USER_FK + " = ? AND " + COLUMN_UNIT + " = ?",
+                    new String[]{username, unit});
+            db.close();
+            return rowsUpdated > 0;
+        }
+
+        cursor.close();
         ContentValues values = new ContentValues();
         values.put(COLUMN_UNIT, unit);
         values.put(COLUMN_SCORE, score);
-        values.put(COLUMN_USER_FK, username); // Store the username for reference
+        values.put(COLUMN_USER_FK, username); // use username for reference
         long result = db.insert(TABLE_TEST_SCORES, null, values);
         db.close();
         return result != -1;

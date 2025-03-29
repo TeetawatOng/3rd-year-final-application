@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         myDatabaseHelper = new MyDatabaseHelper(this);
+//        myDatabaseHelper.onUpgrade(myDatabaseHelper.getWritableDatabase(),1,1);
     }
 
     @Override

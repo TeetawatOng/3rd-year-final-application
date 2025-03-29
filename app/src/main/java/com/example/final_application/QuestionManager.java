@@ -31,16 +31,16 @@ public class QuestionManager {
 
     // answer index is (0, 1, 2, 3)
     public static int answer1[] = {
-            1, // "Number" อยู่ที่ index 1 ของ choices1[0]
-            3, // "let" อยู่ที่ index 3 ของ choices1[1]
-            2, // "Boolean" อยู่ที่ index 2 ของ choices1[2]
-            1, // "Undefined" อยู่ที่ index 1 ของ choices1[3]
-            2, // "let message = `Hello World`;" อยู่ที่ index 2 ของ choices1[4]
-            2, // "Object" อยู่ที่ index 2 ของ choices1[5]
-            1, // "Array" อยู่ที่ index 1 ของ choices1[6]
-            2, // "object" อยู่ที่ index 2 ของ choices1[7]
-            2, // "`Hello World`" อยู่ที่ index 2 ของ choices1[8]
-            2, // "const" อยู่ที่ index 2 ของ choices1[9]
+            1,
+            3,
+            2,
+            1,
+            2,
+            2,
+            1,
+            2,
+            2,
+            2,
     };
 
     public static String question4[] = {

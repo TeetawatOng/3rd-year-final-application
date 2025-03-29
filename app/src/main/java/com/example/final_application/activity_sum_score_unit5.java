@@ -99,15 +99,15 @@ public class activity_sum_score_unit5 extends AppCompatActivity implements View.
         }
 
         if (username != null) {
-            boolean results = myDatabaseHelper.insertTestScore(username, "unit1", finalScore);
+            boolean results = myDatabaseHelper.insertTestScore(username, "unit5", finalScore);
         }
     }
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btnRetest1){
-            Intent goTest1 = new Intent(activity_sum_score_unit5.this, TestUnit_5.class);
-            startActivity(goTest1);
+        if (view.getId() == R.id.btnRetest5){
+            Intent goTest5 = new Intent(activity_sum_score_unit5.this, TestUnit_5.class);
+            startActivity(goTest5);
         }
     }
 

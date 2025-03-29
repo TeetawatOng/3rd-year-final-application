@@ -22,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class activity_sum_score_unit5 extends AppCompatActivity implements View.OnClickListener {
     Button btnRetest5;
     TextView scoreView5, textExcellent5, textGood5, textBad5;
-    ImageButton imageExcellent5, imageGood5, imageBad5;
+    ImageButton imageExcellent5, imageGood5 , imageBad5;
     String resultText = "";
     MyDatabaseHelper myDatabaseHelper;
     SharedPreferences sharedPreferences;

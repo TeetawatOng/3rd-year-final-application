@@ -20,13 +20,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class activity_sum_score_unit1 extends AppCompatActivity implements View.OnClickListener {
-    Button btnRetest1;
+    Button btnRetest1,btnbacklesson1;
     TextView scoreView1, textExcellent, textGood, textBad;
     ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
     MyDatabaseHelper myDatabaseHelper;
-
     SharedPreferences sharedPreferences;
+
     private static final String SHARED_PREF_NAME = "userinfo";
     private static final String KEY_USERNAME = "username";
 
@@ -41,6 +41,7 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             return insets;
         });
 
+        btnbacklesson1 = findViewById(R.id.btnbacklesson1);
         btnRetest1 = findViewById(R.id.btnRetest1);
         scoreView1 = findViewById(R.id.scoreView1);
         textBad = findViewById(R.id.textBad1);
@@ -50,6 +51,7 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         imageGood = findViewById(R.id.imageGood1);
         imageBad = findViewById(R.id.imageBad1);
         btnRetest1.setOnClickListener(this);
+        btnbacklesson1.setOnClickListener(this);
 
         myDatabaseHelper = new MyDatabaseHelper(this);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
@@ -74,10 +76,10 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             textBad.setVisibility(View.VISIBLE);
             imageBad.setVisibility(View.VISIBLE);
         }
-
         if (username != null) {
             boolean results = myDatabaseHelper.insertTestScore(username, "unit1", finalScore);
         }
+
     }
 
     @Override
@@ -86,5 +88,11 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             Intent goTest1 = new Intent(activity_sum_score_unit1.this, TestUnit_1.class);
             startActivity(goTest1);
         }
+        else if (view.getId() == R.id.btnbacklesson1) {
+            Intent golesson1 = new Intent(activity_sum_score_unit1.this, lesson.class);
+            startActivity(golesson1);
+        }
     }
+
+
 }

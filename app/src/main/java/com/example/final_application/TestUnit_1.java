@@ -15,7 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class TestUnit_1 extends AppCompatActivity implements View.OnClickListener {
+public class TestUnit_1 extends AppCompatActivity implements View.OnClickListener{
     Button btnNext1, btnSubmit1, btnBack1;
     TextView questionView1;
     RadioButton unit1c1, unit1c2, unit1c3, unit1c4;
@@ -123,8 +123,6 @@ public class TestUnit_1 extends AppCompatActivity implements View.OnClickListene
         }
         return score;
     }
-
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnNext1){

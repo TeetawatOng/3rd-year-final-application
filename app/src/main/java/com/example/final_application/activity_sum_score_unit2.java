@@ -15,7 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class activity_sum_score_unit2 extends AppCompatActivity implements View.OnClickListener {
-    Button btnRetest2;
+    Button btnRetest2,btnbacklesson2;
     TextView scoreView2, textExcellent, textGood, textBad;
     ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
@@ -36,6 +36,7 @@ public class activity_sum_score_unit2 extends AppCompatActivity implements View.
             return insets;
         });
 
+        btnbacklesson2 = findViewById(R.id.btnbacklesson2);
         btnRetest2 = findViewById(R.id.btnRetest2);
         scoreView2 = findViewById(R.id.scoreView2);
         textBad = findViewById(R.id.textBad2);
@@ -45,6 +46,7 @@ public class activity_sum_score_unit2 extends AppCompatActivity implements View.
         imageGood = findViewById(R.id.imageGood2);
         imageBad = findViewById(R.id.imageBad2);
         btnRetest2.setOnClickListener(this);
+        btnbacklesson2.setOnClickListener(this);
 
         myDatabaseHelper = new MyDatabaseHelper(this);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
@@ -55,6 +57,7 @@ public class activity_sum_score_unit2 extends AppCompatActivity implements View.
     private void showScore() {
         int finalScore = getIntent().getIntExtra("score",0);
         int totalQuestion = getIntent().getIntExtra("total",0);
+        String username = sharedPreferences.getString(KEY_USERNAME,null);
 
         resultText = finalScore + "/" + totalQuestion;
         scoreView2.setText(resultText);
@@ -68,6 +71,10 @@ public class activity_sum_score_unit2 extends AppCompatActivity implements View.
             textBad.setVisibility(View.VISIBLE);
             imageBad.setVisibility(View.VISIBLE);
         }
+        if (username != null) {
+            boolean results = myDatabaseHelper.insertTestScore(username, "unit2", finalScore);
+        }
+
     }
 
     @Override
@@ -75,6 +82,10 @@ public class activity_sum_score_unit2 extends AppCompatActivity implements View.
         if (view.getId() == R.id.btnRetest2){
             Intent goTest2 = new Intent(activity_sum_score_unit2.this, TestUnit_2.class);
             startActivity(goTest2);
+        }
+        else if (view.getId() == R.id.btnbacklesson2) {
+            Intent golesson2 = new Intent(activity_sum_score_unit2.this, lesson.class);
+            startActivity(golesson2);
         }
     }
 }

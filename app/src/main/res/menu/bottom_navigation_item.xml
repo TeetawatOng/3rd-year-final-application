@@ -5,6 +5,7 @@
     <item
         android:id="@+id/action_lesson"
         android:icon="@drawable/home" />
+
     <item
         android:id="@+id/action_achievement"
         android:icon="@drawable/trophy" />

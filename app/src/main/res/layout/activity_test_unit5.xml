@@ -27,19 +27,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:background="#3E3047"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_item" />
-
     <TextView
         android:layout_width="411dp"
         android:layout_height="113dp"
@@ -70,7 +57,7 @@
         android:id="@+id/btnSubmit5"
         android:layout_width="168dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginTop="508dp"
         android:backgroundTint="#1CBF10"
         android:drawableTint="#000000"
         android:text="ส่งคำตอบ"
@@ -78,18 +65,17 @@
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnNext5"
         android:layout_width="168dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginTop="508dp"
         android:backgroundTint="#FFC707"
         android:drawableRight="@android:drawable/ic_media_next"
         android:drawableTint="#000000"
@@ -98,12 +84,10 @@
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/questionView5"
@@ -159,18 +143,16 @@
         android:id="@+id/btnBack5"
         android:layout_width="168dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginTop="508dp"
         android:backgroundTint="#232323"
         android:drawableLeft="@android:drawable/ic_media_previous"
         android:text="ย้อนกลับ"
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

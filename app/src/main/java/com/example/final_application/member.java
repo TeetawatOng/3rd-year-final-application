@@ -39,13 +39,10 @@ public class member extends AppCompatActivity {
                             Intent goAchievement = new Intent(member.this, Achievement.class);
                             startActivity(goAchievement);
                         }
-                        else if (item.getItemId() == R.id.action_member){
-                            Intent goMember = new Intent(member.this, member.class);
-                            startActivity(goMember);
-                        }
                         return true;
                     }
                 }
         );
+        bottomNavigationView.setSelectedItemId(R.id.action_member);
     }
 }

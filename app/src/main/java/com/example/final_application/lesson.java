@@ -49,11 +49,7 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if (item.getItemId() == R.id.action_lesson){
-                            Intent goLesson = new Intent(lesson.this, lesson.class);
-                            startActivity(goLesson);
-                        }
-                        else if (item.getItemId() == R.id.action_achievement){
+                        if (item.getItemId() == R.id.action_achievement){
                             Intent goAchievement = new Intent(lesson.this, Achievement.class);
                             startActivity(goAchievement);
                         }
@@ -74,7 +70,6 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String username = sharedPreferences.getString(KEY_USERNAME,null);
-
         if(username != null){
             textUser.setText("สวัสดี " + username);
         }

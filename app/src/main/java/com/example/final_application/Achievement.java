@@ -42,7 +42,7 @@ public class Achievement extends AppCompatActivity {
         textAch2 = findViewById(R.id.textAch2);
         textAch3 = findViewById(R.id.textAch3);
         textAch4 = findViewById(R.id.textAch4);
-        textAch5 = findViewById(R.id.textAch1);
+        textAch5 = findViewById(R.id.textAch5);
         progressAch1 = findViewById(R.id.progressAch1);
         progressAch2 = findViewById(R.id.progressAch2);
         progressAch3 = findViewById(R.id.progressAch3);
@@ -57,10 +57,6 @@ public class Achievement extends AppCompatActivity {
                             Intent goLesson = new Intent(Achievement.this, lesson.class);
                             startActivity(goLesson);
                         }
-                        else if (item.getItemId() == R.id.action_achievement){
-                            Intent goAchievement = new Intent(Achievement.this, Achievement.class);
-                            startActivity(goAchievement);
-                        }
                         else if (item.getItemId() == R.id.action_member){
                             Intent goMember = new Intent(Achievement.this, member.class);
                             startActivity(goMember);
@@ -71,6 +67,7 @@ public class Achievement extends AppCompatActivity {
         );
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String username = sharedPreferences.getString(KEY_USERNAME, null);
+        bottomNavigationView.setSelectedItemId(R.id.action_achievement);
 
         updateProgress(username);
     }
@@ -79,7 +76,6 @@ public class Achievement extends AppCompatActivity {
         String[] units = {"unit1", "unit2", "unit3", "unit4", "unit5"};
         ProgressBar[] progressBars = {progressAch1, progressAch2, progressAch3, progressAch4, progressAch5};
         TextView[] textViews = {textAch1, textAch2, textAch3, textAch4, textAch5};
-        int maxScore = 100;
         // setProgressBar
         for (int i = 0; i < units.length; i++) {
             int score = myDatabaseHelper.getUnitScore(username, units[i]);

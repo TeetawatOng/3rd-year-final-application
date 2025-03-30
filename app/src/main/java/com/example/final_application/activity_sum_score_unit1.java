@@ -25,9 +25,8 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
     ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
     MyDatabaseHelper myDatabaseHelper;
-    SharedPreferences sharedPreferences;
-    BottomNavigationView bottomNavigationView;
 
+    SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "userinfo";
     private static final String KEY_USERNAME = "username";
 
@@ -56,28 +55,6 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
         showScore();
-
-        bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if (item.getItemId() == R.id.action_lesson){
-                            Intent goLesson = new Intent(activity_sum_score_unit1.this, lesson.class);
-                            startActivity(goLesson);
-                        }
-                        else if (item.getItemId() == R.id.action_achievement){
-                            Intent goAchievement = new Intent(activity_sum_score_unit1.this, Achievement.class);
-                            startActivity(goAchievement);
-                        }
-                        else if (item.getItemId() == R.id.action_member){
-                            Intent goMember = new Intent(activity_sum_score_unit1.this, member.class);
-                            startActivity(goMember);
-                        }
-                        return true;
-                    }
-                }
-        );
     }
 
     private void showScore() {
@@ -110,6 +87,4 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
             startActivity(goTest1);
         }
     }
-
-
 }

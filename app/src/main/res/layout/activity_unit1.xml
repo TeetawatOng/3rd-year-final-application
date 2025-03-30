@@ -30,12 +30,11 @@
 
     <WebView
         android:id="@+id/web1"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_width="338dp"
+        android:layout_height="550dp"
         android:layout_marginLeft="100px"
         android:layout_marginTop="80px"
-        android:layout_marginRight="100px"
-        >
+        android:layout_marginRight="100px">
 
 
     </WebView>
@@ -56,11 +55,15 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#3E3047"
         app:itemIconTint="@color/white"
         app:itemTextColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_item" />
 
 </LinearLayout>

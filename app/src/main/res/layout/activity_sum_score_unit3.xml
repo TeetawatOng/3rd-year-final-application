@@ -7,8 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".activity_sum_score_unit3">
 
+    <ImageButton
+        android:id="@+id/imageGood3"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/good_score" />
+
+    <ImageButton
+        android:id="@+id/imageBad3"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/bad_score" />
+
+    <ImageButton
+        android:id="@+id/imageExcellent3"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/pngwing_com" />
+
     <TextView
-        android:id="@+id/textView96"
+        android:id="@+id/textBad3"
+        android:layout_width="305dp"
+        android:layout_height="295dp"
+        android:background="@drawable/radius_and_backgroundtransparent"
+        android:gravity="center"
+        android:text="ยังต้องฝึกอยู่อีกหน่อย ลองแก้มือดูอีกครั้งไหม"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textGood3"
         android:layout_width="305dp"
         android:layout_height="295dp"
         android:background="@drawable/radius_and_backgroundtransparent"
@@ -16,6 +76,22 @@
         android:text="คุณทำคะแนนได้ดีเลยนะ ลองแก้มือดูอีกครั้งไหม"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textExcellent3"
+        android:layout_width="305dp"
+        android:layout_height="295dp"
+        android:background="@drawable/radius_and_backgroundtransparent"
+        android:gravity="center"
+        android:text="สุดยอดคุณได้คะแนนเต็ม !"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +142,7 @@
         app:menu="@menu/bottom_navigation_item" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnRetest3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -85,7 +161,7 @@
         app:layout_constraintVertical_bias="0.838" />
 
     <TextView
-        android:id="@+id/textView99"
+        android:id="@+id/scoreView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="7/10"
@@ -96,16 +172,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.375" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="162dp"
-        android:layout_height="370dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView97"
-        app:layout_constraintVertical_bias="0.986"
-        app:srcCompat="@drawable/good_score" />
 </androidx.constraintlayout.widget.ConstraintLayout>

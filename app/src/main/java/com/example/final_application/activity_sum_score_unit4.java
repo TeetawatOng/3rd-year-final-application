@@ -20,13 +20,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class activity_sum_score_unit4 extends AppCompatActivity implements View.OnClickListener {
-    Button btnRetest4;
+    Button btnRetest4,btnbacklesson4;
     TextView scoreView4, textExcellent4, textGood4, textBad4;
     ImageButton imageExcellent4, imageGood4, imageBad4;
     String resultText = "";
     MyDatabaseHelper myDatabaseHelper;
     SharedPreferences sharedPreferences;
-    BottomNavigationView bottomNavigationView;
 
     private static final String SHARED_PREF_NAME = "userinfo";
     private static final String KEY_USERNAME = "username";
@@ -42,6 +41,7 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
             return insets;
         });
 
+        btnbacklesson4 = findViewById(R.id.btnbacklesson4);
         btnRetest4 = findViewById(R.id.btnRetest4);
         scoreView4 = findViewById(R.id.scoreView4);
         textBad4 = findViewById(R.id.textBad4);
@@ -51,33 +51,12 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
         imageGood4 = findViewById(R.id.imageGood4);
         imageBad4 = findViewById(R.id.imageBad4);
         btnRetest4.setOnClickListener(this);
+        btnbacklesson4.setOnClickListener(this);
 
         myDatabaseHelper = new MyDatabaseHelper(this);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
         showScore();
-
-        bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if (item.getItemId() == R.id.action_lesson){
-                            Intent goLesson = new Intent(activity_sum_score_unit4.this, lesson.class);
-                            startActivity(goLesson);
-                        }
-                        else if (item.getItemId() == R.id.action_achievement){
-                            Intent goAchievement = new Intent(activity_sum_score_unit4.this, Achievement.class);
-                            startActivity(goAchievement);
-                        }
-                        else if (item.getItemId() == R.id.action_member){
-                            Intent goMember = new Intent(activity_sum_score_unit4.this, member.class);
-                            startActivity(goMember);
-                        }
-                        return true;
-                    }
-                }
-        );
     }
 
     private void showScore() {
@@ -97,7 +76,6 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
             textBad4.setVisibility(View.VISIBLE);
             imageBad4.setVisibility(View.VISIBLE);
         }
-
         if (username != null) {
             boolean results = myDatabaseHelper.insertTestScore(username, "unit4", finalScore);
         }
@@ -105,9 +83,13 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btnRetest1){
+        if (view.getId() == R.id.btnRetest4){
             Intent goTest4 = new Intent(activity_sum_score_unit4.this, TestUnit_4.class);
             startActivity(goTest4);
+        }
+        else if (view.getId() == R.id.btnbacklesson4) {
+            Intent golesson4 = new Intent(activity_sum_score_unit4.this, lesson.class);
+            startActivity(golesson4);
         }
     }
 

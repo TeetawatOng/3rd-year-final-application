@@ -44,5 +44,6 @@ public class member extends AppCompatActivity {
                 }
         );
         bottomNavigationView.setSelectedItemId(R.id.action_member);
+
     }
 }

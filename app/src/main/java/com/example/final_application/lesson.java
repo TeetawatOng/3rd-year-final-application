@@ -73,6 +73,7 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
         if(username != null){
             textUser.setText("สวัสดี " + username);
         }
+
     }
 
     @Override
@@ -99,7 +100,7 @@ public class lesson extends AppCompatActivity implements View.OnClickListener {
             // Back to login Activity
             Intent goLogin = new Intent(lesson.this, MainActivity.class);
             startActivity(goLogin);
-            finish();
+            finishAffinity();
         }
     }
 

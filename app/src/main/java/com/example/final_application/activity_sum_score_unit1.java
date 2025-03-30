@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class activity_sum_score_unit1 extends AppCompatActivity implements View.OnClickListener {
-    Button btnRetest1,btnbacklesson1;
+    Button btnRetest1, btnbacklesson1;
     TextView scoreView1, textExcellent, textGood, textBad;
     ImageButton imageExcellent, imageGood, imageBad;
     String resultText = "";
@@ -55,6 +55,7 @@ public class activity_sum_score_unit1 extends AppCompatActivity implements View.
 
         myDatabaseHelper = new MyDatabaseHelper(this);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
 
         showScore();
     }
